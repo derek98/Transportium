@@ -14,6 +14,7 @@
 		2E853E68223BEFE3002F6B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E853E66223BEFE3002F6B3F /* LaunchScreen.storyboard */; };
 		2E853E73223BEFE4002F6B3F /* TransportiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E853E72223BEFE4002F6B3F /* TransportiumTests.swift */; };
 		2E853E7E223BEFE4002F6B3F /* TransportiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E853E7D223BEFE4002F6B3F /* TransportiumUITests.swift */; };
+		2E853E8C223BF003002F6B3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E853E8B223BF003002F6B3F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2E853E79223BEFE4002F6B3F /* TransportiumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransportiumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E853E7D223BEFE4002F6B3F /* TransportiumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportiumUITests.swift; sourceTree = "<group>"; };
 		2E853E7F223BEFE4002F6B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E853E8B223BF003002F6B3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		2E853E5C223BEFDF002F6B3F /* Transportium */ = {
 			isa = PBXGroup;
 			children = (
+				2E853E8D223BF00C002F6B3F /* BBDD */,
 				2E853E5D223BEFDF002F6B3F /* AppDelegate.swift */,
 				2E853E5F223BEFDF002F6B3F /* ViewController.swift */,
 				2E853E61223BEFDF002F6B3F /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				2E853E7F223BEFE4002F6B3F /* Info.plist */,
 			);
 			path = TransportiumUITests;
+			sourceTree = "<group>";
+		};
+		2E853E8D223BF00C002F6B3F /* BBDD */ = {
+			isa = PBXGroup;
+			children = (
+				2E853E8B223BF003002F6B3F /* GoogleService-Info.plist */,
+			);
+			path = BBDD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E853E68223BEFE3002F6B3F /* LaunchScreen.storyboard in Resources */,
+				2E853E8C223BF003002F6B3F /* GoogleService-Info.plist in Resources */,
 				2E853E65223BEFE3002F6B3F /* Assets.xcassets in Resources */,
 				2E853E63223BEFDF002F6B3F /* Main.storyboard in Resources */,
 			);
