@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var repPassword: UITextField!
     
+    @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var lbl: UILabel!
 
     var emailValue:String = ""
@@ -25,9 +26,7 @@ class ViewController: UIViewController {
     var repPassValue:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailValue = email.text!
-        passValue = password.text!
-        repPassValue = repPassword.text!
+       
         
         chargeAppearance()
     }
@@ -39,14 +38,46 @@ class ViewController: UIViewController {
     }
     
     @IBAction func registrate(_ sender: Any) {
+        emailValue = email.text!
+        passValue = password.text!
+        repPassValue = repPassword.text!
         
-      Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>, completion: <#T##AuthDataResultCallback?##AuthDataResultCallback?##(AuthDataResult?, Error?) -> Void#>)
+        if confirmPass(){
+            
+            Auth.auth().createUser(withEmail: emailValue, password: passValue){ (user, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                else if let user = user {
+                    print("Sign Up Successfully.")
+                }
+                
+            }
+                
+                
+             }
+            
+            }
+     
         
-    }
+    
     
     func confirmPass() -> Bool {
         if(passValue != repPassValue){
+            let alert = UIAlertController(title: "Error al registrar", message: "Las contraseñas no coinciden", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+            print("\(passValue) y \(repPassValue)")
+            btnRegister.isSelected = false
             return false
+        }else if (passValue.isEmpty || repPassValue.isEmpty || emailValue.isEmpty){
+            let alert = UIAlertController(title: "Tienes que llenar los campos", message: "No puedes dejar ningun campo vacio", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+            print("\(passValue) y \(repPassValue)")
+            btnRegister.isSelected = false
+            return false
+            
         }else{
             return true
         }
