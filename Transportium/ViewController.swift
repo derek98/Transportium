@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var lblRegister: UILabel!
+    @IBOutlet weak var repPassword: UITextField!
+    
+    @IBOutlet weak var lbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +27,12 @@ class ViewController: UIViewController {
     }
     
     func chargeAppearance(){
-       email.layer.cornerRadius = 30.0
-        lblRegister.layer.cornerRadius = 10.0
+       self.email.layer.cornerRadius = 30.0
+
+        
     }
 
+    
 
 }
 
