@@ -91,11 +91,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22AEBF2F223C08E600999B0B /* New Group */ = {
+		2291AF5A224E7FCD0095E30D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "New Group";
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22AEBF2F223C08E600999B0B /* Log In */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Log In";
 			sourceTree = "<group>";
 		};
 		2E853E51223BEFDF002F6B3F = {
@@ -123,7 +130,8 @@
 		2E853E5C223BEFDF002F6B3F /* Transportium */ = {
 			isa = PBXGroup;
 			children = (
-				22AEBF2F223C08E600999B0B /* New Group */,
+				2291AF5A224E7FCD0095E30D /* Model */,
+				22AEBF2F223C08E600999B0B /* Log In */,
 				2E853E8D223BF00C002F6B3F /* BBDD */,
 				2E853E5D223BEFDF002F6B3F /* AppDelegate.swift */,
 				2E853E5F223BEFDF002F6B3F /* ViewController.swift */,
