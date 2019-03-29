@@ -47,15 +47,16 @@ class ViewController: UIViewController {
         repPassValue = repPassword.text!
         
         if confirmPass(){
-            let jsonObject: [Any]  = [
-                [
-                    "email": emailValue,
-                    "password": passValue
-                ]
-            ]
+//            let jsonObject: [Any]  = [
+//                [
+//                    "email": emailValue,
+//                    "password": passValue
+//                ]
+//            ]
+            let stringUser =  ["email": self.emailValue, "password": self.passValue]
             
             Auth.auth().createUser(withEmail: emailValue, password: passValue){ (user, error) in
-                self.ref.child("transportebbdd").child("usuarios").childByAutoId().setValue(jsonObject)
+                self.ref.child("usuarios").childByAutoId().setValue(stringUser)
             
             if let error = error {
                 print(error.localizedDescription)
