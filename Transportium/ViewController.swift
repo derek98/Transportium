@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseUI
+import FirebaseDatabase
 
 
 
@@ -20,20 +21,23 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var lbl: UILabel!
-    
+
     var emailValue:String = ""
     var passValue:String = ""
     var repPassValue:String = ""
     
+    var ref: DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
        
+        
         chargeAppearance()
     }
     
     func chargeAppearance(){
        self.email.layer.cornerRadius = 30.0
-
+        
         
     }
     
@@ -46,31 +50,31 @@ class ViewController: UIViewController {
         repPassValue = repPassword.text!
         
         if confirmPass(){
+//            let jsonObject: [Any]  = [
+//                [
+//                    "email": emailValue,
+//                    "password": passValue
+//                ]
+//            ]
+            let stringUser =  ["email": self.emailValue, "password": self.passValue]
             
             Auth.auth().createUser(withEmail: emailValue, password: passValue){ (user, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                }
-                else if let user = user {
-                    print("Sign Up Successfully.")
-                }
-                
+                self.ref.child("usuarios").childByAutoId().setValue(stringUser)
+            
+            if let error = error {
+                print(error.localizedDescription)
             }
-            
-            
+            else if let user = user {
+                print("Sign Up Successfully.")
+            }
         }
-    }
-    
-    
-    
-    @IBAction func Login(_ sender: Any) {
-       /* let vc = Log_In()
-        navigationController?.pushViewController(vc, animated: true)
-    */
-        let LogIn = self.storyboard!.instantiateViewController(withIdentifier: "Log_In") as! Log_In
-        self.navigationController!.pushViewController(LogIn, animated: true)
-
-}
+                
+                
+             }
+            
+            }
+     
+        
     
     
     func confirmPass() -> Bool {
@@ -94,5 +98,7 @@ class ViewController: UIViewController {
         }
     }
     
+
 }
+
 
