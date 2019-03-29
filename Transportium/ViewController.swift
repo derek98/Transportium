@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseUI
+import FirebaseDatabase
 
 
 
@@ -24,8 +25,11 @@ class ViewController: UIViewController {
     var emailValue:String = ""
     var passValue:String = ""
     var repPassValue:String = ""
+    
+    var ref: DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
        
         
         chargeAppearance()
@@ -43,16 +47,23 @@ class ViewController: UIViewController {
         repPassValue = repPassword.text!
         
         if confirmPass(){
+            let jsonObject: [Any]  = [
+                [
+                    "email": emailValue,
+                    "password": passValue
+                ]
+            ]
             
             Auth.auth().createUser(withEmail: emailValue, password: passValue){ (user, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                }
-                else if let user = user {
-                    print("Sign Up Successfully.")
-                }
-                
+                self.ref.child("transportebbdd").child("usuarios").childByAutoId().setValue(jsonObject)
+            
+            if let error = error {
+                print(error.localizedDescription)
             }
+            else if let user = user {
+                print("Sign Up Successfully.")
+            }
+        }
                 
                 
              }
