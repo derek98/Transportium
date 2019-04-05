@@ -96,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In-->
         <scene sceneID="QN1-Ok-OEZ">
             <objects>
-                <viewController id="qS7-8h-0OO" sceneMemberID="viewController">
+                <viewController id="qS7-8h-0OO" customClass="Log_In" customModule="Transportium" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wi0-wt-64e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,6 +146,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fPv-a5-f5n"/>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="9fk-XM-U3t" id="qes-mw-bht"/>
+                        <outlet property="password" destination="CQl-th-6ao" id="s76-MM-b2c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8d-rd-vvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jjG-gX-B0E" userLabel="Exit" sceneMemberID="exit"/>
