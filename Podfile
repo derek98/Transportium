@@ -6,6 +6,9 @@ target 'Transportium' do
   use_frameworks!
 pod 'Firebase'
 pod 'FirebaseUI'
+pod 'FirebaseUI/Auth'
+
+
   # Pods for Transportium
 
   

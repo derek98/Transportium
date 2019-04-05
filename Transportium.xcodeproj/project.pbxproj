@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01E635C05A06B0AEEFCFF1EC /* Pods_TransportiumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFB17A99F948B121A9989A4 /* Pods_TransportiumTests.framework */; };
+		2291AF5F224E84E90095E30D /* Log In.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291AF5E224E84E90095E30D /* Log In.swift */; };
 		2E4D71F8224E7E3A001CE4AB /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4D71F7224E7E3A001CE4AB /* user.swift */; };
 		2E853E5E223BEFDF002F6B3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E853E5D223BEFDF002F6B3F /* AppDelegate.swift */; };
 		2E853E60223BEFDF002F6B3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E853E5F223BEFDF002F6B3F /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		0AF8C573D8966A5B6DAC8594 /* Pods_Transportium.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Transportium.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2291AF5E224E84E90095E30D /* Log In.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Log In.swift"; path = "Transportium/Model/Log In.swift"; sourceTree = SOURCE_ROOT; };
 		2E15757178B245FE24EEF686 /* Pods-Transportium.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transportium.release.xcconfig"; path = "Target Support Files/Pods-Transportium/Pods-Transportium.release.xcconfig"; sourceTree = "<group>"; };
 		2E4D71F7224E7E3A001CE4AB /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		2E853E5A223BEFDF002F6B3F /* Transportium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transportium.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2291AF5D224E840B0095E30D /* Log In */ = {
+			isa = PBXGroup;
+			children = (
+				2291AF5E224E84E90095E30D /* Log In.swift */,
+			);
+			name = "Log In";
+			path = Login;
+			sourceTree = "<group>";
+		};
 		2E4D71F6224E7E2D001CE4AB /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +137,7 @@
 		2E853E5C223BEFDF002F6B3F /* Transportium */ = {
 			isa = PBXGroup;
 			children = (
+				2291AF5D224E840B0095E30D /* Log In */,
 				2E4D71F6224E7E2D001CE4AB /* Class */,
 				2E853E8D223BF00C002F6B3F /* BBDD */,
 				2E853E5D223BEFDF002F6B3F /* AppDelegate.swift */,
@@ -481,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2291AF5F224E84E90095E30D /* Log In.swift in Sources */,
 				2E853E60223BEFDF002F6B3F /* ViewController.swift in Sources */,
 				2E853E5E223BEFDF002F6B3F /* AppDelegate.swift in Sources */,
 				2E4D71F8224E7E3A001CE4AB /* user.swift in Sources */,

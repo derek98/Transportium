@@ -41,7 +41,10 @@ class ViewController: UIViewController {
         
     }
     
+
+    
     @IBAction func registrate(_ sender: Any) {
+        
         emailValue = email.text!
         passValue = password.text!
         repPassValue = repPassword.text!
