@@ -131,7 +131,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="Login:" destination="jjG-gX-B0E" eventType="touchUpInside" id="TFM-gk-fNG"/>
+                                    <action selector="Log:" destination="qS7-8h-0OO" eventType="touchUpInside" id="rwh-Fm-2bX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Iniciar Sesión" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAs-Bd-A27">
@@ -147,12 +147,11 @@
                         <viewLayoutGuide key="safeArea" id="fPv-a5-f5n"/>
                     </view>
                     <connections>
-                        <outlet property="email" destination="9fk-XM-U3t" id="qes-mw-bht"/>
-                        <outlet property="password" destination="CQl-th-6ao" id="s76-MM-b2c"/>
+                        <outlet property="email" destination="9fk-XM-U3t" id="5hr-kl-12E"/>
+                        <outlet property="password" destination="CQl-th-6ao" id="oj0-B0-wjj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8d-rd-vvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="jjG-gX-B0E" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="846" y="134"/>
         </scene>
