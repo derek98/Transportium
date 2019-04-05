@@ -4,10 +4,9 @@ import FirebaseUI
 
 class Log_In: UIViewController {
     
+    
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-    
-    
     
     
     
@@ -18,44 +17,24 @@ class Log_In: UIViewController {
     }
     
    
-    
-    @IBAction func Login(_ sender: Any) {
+    @IBAction func Log(_ sender: Any) {
+        print("TUPUTAMADRE")
+        let emailLog = self.email.text
+        let passwordLog = self.password.text
         
-        let correo = email.text
-        let contraseña = password.text
         
-        Auth.auth().signIn(withEmail: correo!, password: contraseña!) { (result, error) in
-        
+        Auth.auth().signIn(withEmail: emailLog!, password: passwordLog!) { (user, error) in
             
-            
-            if let _eror = error{
-                print(_eror)
-                
-            }else{
-                
-                
-                if let _res = result{
-                    print(_res)
-                }
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            else if let user = user {
+                print("Log Successfully.")
             }
         }
-        
-        
-        
-        
-        /* authUI?.delegate = self as? FUIAuthDelegate
-         
-         let loginViewController = authUI!.authViewController()
-         
-         present(loginViewController, animated: true, completion: nil)
-         
-         */
-        
-    }
-    
-
 
     
+}
 }
     
     
