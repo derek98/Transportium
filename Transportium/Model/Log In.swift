@@ -17,33 +17,51 @@ class Log_In: UIViewController {
         
     }
     
+   
     
-    @IBAction func login(_ sender: Any) {
+    @IBAction func Login(_ sender: Any) {
         
-        let authUI = FUIAuth.defaultAuthUI()
+        let correo = email.text
+        let contraseña = password.text
         
-        guard authUI != nil else{
-            //Log the error
-            return
+        Auth.auth().signIn(withEmail: correo!, password: contraseña!) { (result, error) in
+        
             
+            
+            if let _eror = error{
+                print(_eror)
+                
+            }else{
+                
+                
+                if let _res = result{
+                    print(_res)
+                }
+            }
         }
         
-        authUI?.delegate = self as? FUIAuthDelegate
-        
-        let loginViewController = authUI!.authViewController()
-        
-        present(loginViewController, animated: true, completion: nil)
         
         
+        
+        /* authUI?.delegate = self as? FUIAuthDelegate
+         
+         let loginViewController = authUI!.authViewController()
+         
+         present(loginViewController, animated: true, completion: nil)
+         
+         */
         
     }
     
-    
-    
-    
-}
 
 
-extension ViewController:FUIAuthDelegate{
     
 }
+    
+    
+
+
+
+
+    
+
