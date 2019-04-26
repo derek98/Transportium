@@ -14,6 +14,9 @@ import FirebaseDatabase
 
 
 class ViewController: UIViewController {
+   
+    var newViewController:UIViewController? = nil
+    
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -27,12 +30,16 @@ class ViewController: UIViewController {
     var repPassValue:String = ""
     
     var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         ref = Database.database().reference()
        
         
         chargeAppearance()
+        newViewController = storyboard?.instantiateViewController(withIdentifier: "login") as! Log_In
+        
     }
     
     func chargeAppearance(){
@@ -45,6 +52,8 @@ class ViewController: UIViewController {
     
     @IBAction func registrate(_ sender: Any) {
         
+       /* let newViewController = storyboard?.instantiateViewController(withIdentifier: "login") as! Log_In*/
+        
         emailValue = email.text!
         passValue = password.text!
         repPassValue = repPassword.text!
@@ -52,13 +61,24 @@ class ViewController: UIViewController {
         if confirmPass(){
             let stringUser =  ["email": self.emailValue, "password": self.passValue]
             Auth.auth().createUser(withEmail: emailValue, password: passValue){ (user, error) in
-                self.ref.child("usuarios").childByAutoId().setValue(stringUser)
+                self.ref.child("usuarios").child((user?.user.uid)!).setValue(stringUser)
             
             if let error = error {
                 print(error.localizedDescription)
             }
             else if let user = user {
                 print("Sign Up Successfully.")
+                
+                let alertController = UIAlertController(title: "Usuario registrado", message: "¿Desea iniciar sesión", preferredStyle: UIAlertController.Style.alert)
+                let ok = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action) -> Void in
+                    //The (withIdentifier: "VC2") is the Storyboard Segue identifier.
+                    self.present(self.newViewController!, animated: true, completion: nil)
+                    //self.performSegue(withIdentifier: "login", sender: self)
+                })
+                
+                alertController.addAction(ok)
+                self.present(alertController, animated: true, completion: nil)
+                
             }
         }
                 
@@ -90,6 +110,16 @@ class ViewController: UIViewController {
             return true
         }
     }
+    
+    
+    @IBAction func iniciarSesion(_ sender: Any) {
+        
+       /* let newViewController = storyboard?.instantiateViewController(withIdentifier: "login") as! Log_In*/
+        
+        self.present(newViewController!, animated: true, completion: nil)
+        
+    }
+    
     
 
 }
