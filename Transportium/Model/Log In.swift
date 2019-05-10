@@ -6,7 +6,6 @@ import FirebaseDatabase
 
 
 
-
 class Log_In: UIViewController {
     
     
@@ -27,7 +26,7 @@ class Log_In: UIViewController {
    
     @IBAction func Log(_ sender: Any) {
         
-       let newViewController = storyboard?.instantiateViewController(withIdentifier: "createProfile") as! CreateProfile
+       let newViewController = storyboard?.instantiateViewController(withIdentifier: "createProfile") as! createProfile
         
         
         let emailLog = self.email.text
@@ -88,9 +87,7 @@ class Log_In: UIViewController {
             
         }
         
-        
-        
-        
+
         //        if Auth.auth().currentUser != nil {
         
         //            let user = Auth.auth().currentUser
